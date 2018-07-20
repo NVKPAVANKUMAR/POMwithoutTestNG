@@ -41,7 +41,5 @@ public class test_Flipkart {
         String cartSummaryText = CartPage.cartSummaryText(driver).getText();
         assert cartSummaryText.equalsIgnoreCase("My Cart (1)");
         driver.quit();
-
-
     }
 }
