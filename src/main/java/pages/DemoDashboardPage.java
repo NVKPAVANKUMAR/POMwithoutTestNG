@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class DemoDashboardPage {
     private WebDriver driver;
-
     private WebElement logoutButton;
 
     public DemoDashboardPage(WebDriver driver) {

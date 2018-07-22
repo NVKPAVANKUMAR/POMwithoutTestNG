@@ -11,15 +11,14 @@ public class test_demoLogin extends BrowserInstance {
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        initiateDriver("chrome");
+        initiateDriver(ConfigParser.fetchProperity("browsername").toString());
         driver.get(ConfigParser.fetchProperity("demologinurl").toString());
         DemoLoginPage loginPage = new DemoLoginPage(driver);
-        loginPage.getUsername().sendKeys(ConfigParser.fetchProperity("demologinusername").toString());
-        loginPage.getPassword().sendKeys(ConfigParser.fetchProperity("demologinpassword").toString());
-        loginPage.getLoginButton().click();
+        loginPage.enterUsernameText(ConfigParser.fetchProperity("demologinusername").toString());
+        loginPage.enterPasswordText(ConfigParser.fetchProperity("demologinpassword").toString());
+        loginPage.clickLoginButton();
         DemoDashboardPage demoDashboardPage = new DemoDashboardPage(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(demoDashboardPage.getLogoutButton()));
+        Thread.sleep(5000);
         demoDashboardPage.getLogoutButton().click();
         driver.quit();
     }
