@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Flipkart" />
+        <module name="POMwithoutTestNG" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Flipkart" target="1.5" />
+      <module name="POMwithoutTestNG" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
