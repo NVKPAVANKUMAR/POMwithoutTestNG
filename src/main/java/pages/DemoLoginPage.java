@@ -19,7 +19,7 @@ public class DemoLoginPage {
         this.loginButton = driver.findElement(By.id("MemberLoginForm_LoginForm_action_doLogin"));
     }
 
-    public WebElement getUsername() {
+    private WebElement getUsername() {
         return username;
     }
 
@@ -27,7 +27,7 @@ public class DemoLoginPage {
         this.username = username;
     }
 
-    public WebElement getPassword() {
+    private WebElement getPassword() {
         return password;
     }
 
@@ -35,7 +35,7 @@ public class DemoLoginPage {
         this.password = password;
     }
 
-    public WebElement getLoginButton() {
+    private WebElement getLoginButton() {
         return loginButton;
     }
 
@@ -43,10 +43,16 @@ public class DemoLoginPage {
         this.loginButton = loginButton;
     }
 
+    public void enterUsernameText(String username){
+        getUsername().sendKeys(username);
+    }
 
+    public void enterPasswordText(String password){
+        getPassword().sendKeys(password);
+    }
 
-
-
-
+    public void clickLoginButton(){
+        getLoginButton().click();
+    }
 
 }
