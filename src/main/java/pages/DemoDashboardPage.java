@@ -13,7 +13,7 @@ public class DemoDashboardPage {
         this.logoutButton = driver.findElement(By.xpath("//*[@title=\"Log out\"]"));
     }
 
-    public WebElement getLogoutButton() {
+    private WebElement getLogoutButton() {
         return logoutButton;
     }
 
@@ -21,6 +21,9 @@ public class DemoDashboardPage {
         this.logoutButton = logoutButton;
     }
 
+    public void clickLogoutButton(){
+        getLogoutButton().click();
+    }
 
 
 

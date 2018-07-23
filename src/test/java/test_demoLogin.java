@@ -19,7 +19,7 @@ public class test_demoLogin extends BrowserInstance {
         loginPage.clickLoginButton();
         DemoDashboardPage demoDashboardPage = new DemoDashboardPage(driver);
         Thread.sleep(2000);
-        demoDashboardPage.getLogoutButton().click();
+        demoDashboardPage.clickLogoutButton();
         driver.quit();
     }
 }
