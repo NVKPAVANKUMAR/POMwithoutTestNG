@@ -13,11 +13,11 @@ public class test_flipkart {
     private static WebDriver driver = null;
     private static Set<String> set = new LinkedHashSet<String>();
     private static List<String> list = null;
-    static CartPage cartPage = new CartPage();
-    static LoginPage loginPage = new LoginPage();
-    static HomePage homePage = new HomePage();
-    static ProductPage productPage = new ProductPage();
-    static String firstProductPrice, secondProductPrice, cartValue = null;
+    private static CartPage cartPage = new CartPage();
+    private static LoginPage loginPage = new LoginPage();
+    private static HomePage homePage = new HomePage();
+    private static ProductPage productPage = new ProductPage();
+    private static String firstProductPrice, secondProductPrice, cartValue = null;
 
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "DriverJars/chromedriver.exe");
@@ -31,7 +31,7 @@ public class test_flipkart {
         loginPage.clickLogin(driver);
         System.out.println(" Login Successfully, now it is the time to Search.");
         Thread.sleep(3000);
-        homePage.enterTxtInSearchbox(driver, "Iphone");
+        homePage.enterTxtInSearchbox(driver, ConfigParser.fetchProperity("firstsearchitem").toString());
         homePage.clickSearchIcon(driver);
         homePage.clickFirstProductTile(driver);
         set = driver.getWindowHandles();
@@ -43,7 +43,7 @@ public class test_flipkart {
         productPage.clickAddToCart(driver);
         productPage.clickOnCartButton(driver);
         Thread.sleep(2000);
-        homePage.enterTxtInSearchbox(driver, "samsung");
+        homePage.enterTxtInSearchbox(driver, ConfigParser.fetchProperity("secondsearchitem").toString());
         homePage.clickSearchIcon(driver);
         homePage.clickFirstProductTile(driver);
         set = driver.getWindowHandles();
