@@ -15,7 +15,7 @@ public class test_demoLogin extends BrowserInstance {
         loginPage.getPassword().sendKeys("password");
         loginPage.getLoginButton().click();
         DemoDashboardPage demoDashboardPage = new DemoDashboardPage(driver);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         demoDashboardPage.getLogoutButton().click();
         driver.quit();
     }
